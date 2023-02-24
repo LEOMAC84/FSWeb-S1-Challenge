@@ -165,6 +165,7 @@ console.log(fenomenler[6].profile)
 
 
 
+
 // Görev 3:
 //Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 //1. İlk parametre olarak fenomenler dizisini alın,
