@@ -208,10 +208,12 @@ Aşağıdakileri yapmak için fenomenSil'i kullanın:
 5. Ortaya çıkan diziyi döndürün
 
 ÖRNEK: fenomenSil işlevi fenomenler dizisi ve 0 indeks sayısı ile çağrılırsa, veri kümemizden 'Instagram' kaldırılmış olarak döndürür. */
-function fenomenSil(/*kod*/) {
-  /*kod*/
+function fenomenSil(feno3,index) {
+  const sil=[...feno3]
+  sil.splice(index,1)
+    return sil
 }
-
+fenomenSil(fenomenler,0)
 
 
 /* Görev 6:
@@ -231,9 +233,21 @@ Aşağıdakileri yapmak için fenomenEkle'i kullanın:
 
 ÖRNEK: fenomenEkle(fenomenler, 6, "Workintech", 10000000, 2022, "Instagram") çağrıldığında dizinin sonuna yukarıdaki nesne en sona eklenerek yeni fenomenler dizisini döndürmelidir. */
 
-function fenomenEkle(/*kod*/) {
-  /*kod*/
+function fenomenEkle(feno4,number2,profil2,followers1,posts1,platform1) {
+const ekli= [...feno4];
+ ekli.push(
+ {
+  number: number2,
+  profile: profil2,
+  followers: followers1,
+  posts: posts1,
+  platform: platform1,
+ }
+)
+return ekli
 }
+fenomenEkle(fenomenler,6,"Workintech",10000000,2022,"instagram")
+
 
 
 /* Görev 7:
@@ -244,10 +258,16 @@ Aşağıdakileri yapmak için enFenomenler'yi kullanın:
 ÖRNEK: enFenomenler(fenomenler) çağrıldığında sonuç olarak ["Instagram", "Cristiano Ronaldo", ... "Khabane lame"] dönemelidir
 */
 
-function enFenomenler(/*kod*/) {
-  /*kod*/
+function enFenomenler(feno5) {
+  const BigFan=[]
+  for (let i=0; i<feno5.length;i++){
+  if (feno5[i].followers>100000000){
+    BigFan.push(feno5[i].profile)
+  }
 }
-
+return BigFan
+}
+enFenomenler(fenomenler)
 
 /* Görev 8:
 Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
@@ -258,9 +278,11 @@ Aşağıdakileri yapmak için fenomenGonderimSayisi'nı kullanın:
 ÖRNEK: fenomenGonderimSayisi(fenomenler, 'Will Smith') çağrıldığında "136" dönmelidir
 */
 
-function fenomenGonderimSayisi(/*kod*/){
-  /*kod*/
-}
+function fenomenGonderimSayisi(feno6,profile3){
+   const mostPosts=feno6.find(s=> s.profile === profile3).posts
+    return mostPosts
+  }
+console.log(fenomenGonderimSayisi(fenomenler, "Will Smith"))
 
 
 
@@ -275,11 +297,19 @@ Not: Gönderi sayısı belli olmayan (NA) hesaba katmayın.
 Örnek: platformaGoreCokGonderiYapanFenomen(fenomenler, 'TikTok') çağrıldığında "charli damelio" dönmelidir
 */
 
-function platformaGoreCokGonderiYapanFenomen(/*kod*/){
-  /*kod*/
+function platformaGoreCokGonderiYapanFenomen(feno7,platform8){
+let fin;
+let ilk=0
+  for(let i=0; i<feno7.length; i++){
+   if(feno7[i].platform===platform8){
+    if(feno7[i].posts !== "NA" && feno7[i].posts>ilk){
+     ilk=feno7[i].posts
+     fin=feno7[i].profile
+  }
 }
-
-
+}return fin
+}
+console.log(platformaGoreCokGonderiYapanFenomen(fenomenler,'Tiktok'))
 
 /* ***** GÖREVLERİN SONU ***** */
 
