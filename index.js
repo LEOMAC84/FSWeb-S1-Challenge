@@ -197,6 +197,7 @@ function profilListesi(feno2) {
  return list
 }
 
+
 console.log(profilListesi(fenomenler))
 
 /* Görev 5:
