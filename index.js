@@ -165,7 +165,6 @@ console.log(fenomenler[6].profile)
 
 
 
-
 // Görev 3:
 //Aşağıdaki işlemleri yapmak için indekseGoreFenomen işlevini kullanın:
 //1. İlk parametre olarak fenomenler dizisini alın,
@@ -173,14 +172,14 @@ console.log(fenomenler[6].profile)
 //3. `{indeks}. indekste bulunan fenomen: {profile}` şeklinde sonuç döndürün
 
 //NOT: DÖNDÜĞÜNÜZ DİZİN YUKARIDAKİ BİÇİMLE EŞLEŞMESİ GEREKİR, YA DA TESTİ GEÇMEYECEKTİR!
-//ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenomen: Leo Messi' */
+//ÖRNEK: fenomenler dizisi ve 3 sayısı ile indekseGoreFenomen çağrılırsa, `3. indekste bulunan fenmen:o Leo Messi' */
 
 
-function indekseGoreFenomen(/*kod*/) {
-  /*kod*/
+function indekseGoreFenomen(feno,sira) {
+return sira+'. indekste bulunan fenomen: '+feno[sira].profile
 }
 
-
+console.log(indekseGoreFenomen(fenomenler,3))
 
 /*  Görev 4:
 Aşağıdakileri yapmak için profilListesi'ni kullanın:
@@ -190,11 +189,15 @@ Aşağıdakileri yapmak için profilListesi'ni kullanın:
 🌟 Dönüş ÖRNEĞİ: ["Instagram", "Cristiano Ronaldo", "Kylie"....]
 */
 
-function profilListesi(/*kod*/) {
-  /*kod*/
+function profilListesi(feno2) {
+   let list=[]
+  for(let i=0; i<feno2.length ; i++){
+  list.push(feno2[i].profile)
+ }
+ return list
 }
 
-
+console.log(profilListesi(fenomenler))
 
 /* Görev 5:
 Aşağıdakileri yapmak için fenomenSil'i kullanın:
